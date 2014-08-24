@@ -8,7 +8,7 @@ $ratings-star-bg-color: #d8d9d9;
 $ratings-star-bg-on-color: #f47324;
 $ratings-star-color: #fff;
 
-$logo-size: 100px;
+$logo-size: 300px;
 $logo-color: #f99d29;
 $logo-checkmark-color: #000;
 $logo-highlight-color: #fff;
@@ -39,9 +39,10 @@ body.scope-trustpilot
                 line-height: $ratings-star-size;
                 text-align: center;
 
+                color: $ratings-star-color;
+
                 background-color: $ratings-star-bg-color;
                 @include background(linear-gradient($ratings-star-bg-color, darken($ratings-star-bg-color, 8%)));
-                color: $ratings-star-color;
 
                 &:first-child
                 {
@@ -63,8 +64,9 @@ body.scope-trustpilot
                 margin: 0;
             }
 
-            > figure
+            a
             {
+                display: block;
                 overflow: hidden;
                 position: relative;
 
@@ -78,7 +80,7 @@ body.scope-trustpilot
                     content: "";
                     position: absolute;
                     display: block;
-                    opacity: 0.3;
+                    opacity: 0.4;
 
                     width: 250%;
                     height: 200%;
@@ -87,7 +89,8 @@ body.scope-trustpilot
 
                     border-radius: 100%;
 
-                    @include background(linear-gradient($ratings-star-bg-on-color, lighten($ratings-star-bg-on-color, 100%)));
+                    background-color: $logo-highlight-color;
+                    @include radial-gradient(circle at 50% 65%, $logo-color 0%, $logo-highlight-color 50%);
                 }
 
                 figure:first-child
@@ -100,11 +103,13 @@ body.scope-trustpilot
                     height: 93%;
                     bottom: -42%;
                     left: -87%;
+
                     @include transform(rotate(38deg));
 
                     border-radius: 100%;
 
                     background-color: $logo-checkmark-color;
+                    @include radial-gradient(circle at 100% 100%, $logo-checkmark-color 40%, lighten($logo-checkmark-color, 40%) 100%);
 
                     &:before
                     {
@@ -136,12 +141,13 @@ body.scope-trustpilot
                     height: 178%;
                     bottom: -69%;
                     right: -60%;
+
                     @include transform(rotate(16deg));
 
                     border-radius: 100%;
 
                     background-color: $logo-checkmark-color;
-                    @include background(linear-gradient(lighten($logo-checkmark-color, 25%), $logo-checkmark-color));
+                    @include radial-gradient(circle at 50% 100%, $logo-checkmark-color 40%, lighten($logo-checkmark-color, 40%) 100%);
 
                     &:before
                     {
@@ -162,6 +168,81 @@ body.scope-trustpilot
                 }
             }
         }
+
+        /* A-grade browsers only
+        section.logo-alt
+        {
+            figure
+            {
+                margin: 0;
+            }
+
+            a
+            {
+                overflow: hidden;
+                position: relative;
+                display: block;
+
+                width: $logo-size;
+                height: $logo-size;
+
+                background-color: $logo-color;
+
+                &:before
+                {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    opacity: 1;
+
+                    width: 250%;
+                    height: 200%;
+                    top: -161%;
+                    left: -75%;
+
+                    border-radius: 100%;
+
+                    background-color: $logo-highlight-color;
+                    @include radial-gradient(circle at 50% 50%, $logo-color 40%, $logo-highlight-color 100%);
+                }
+
+                figure:before
+                {
+                    content: "";
+                    position: absolute;
+                    display: block;
+
+                    width: 163%;
+                    height: 93%;
+                    bottom: -42%;
+                    left: -87%;
+                    @include transform(rotate(38deg));
+
+                    border-radius: 100%;
+
+                    background-color: $logo-checkmark-color;
+                    @include radial-gradient(circle at 72% 101%, $logo-color 0%, $logo-color 50%, $logo-checkmark-color 50%, lighten($logo-checkmark-color, 50%) 100%);
+                }
+
+                figure:after
+                {
+                    content: "";
+                    position: absolute;
+                    display: block;
+
+                    width: 106%;
+                    height: 178%;
+                    bottom: -69%;
+                    right: -60%;
+                    @include transform(rotate(16deg));
+
+                    border-radius: 100%;
+
+                    background-color: $logo-checkmark-color;
+                    @include radial-gradient(circle at 74% 59%, $logo-color 0%, $logo-color 50%, $logo-checkmark-color 50%, lighten($logo-checkmark-color, 50%) 100%);
+                }
+            }
+        } */
     }
 }
 

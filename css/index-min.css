@@ -2,7 +2,81 @@
 @import url(../normalize.css/normalize.css);
 body.scope-trustpilot article {
   padding: 100px;
-  background-color: #fff; }
+  background-color: #fff;
+        /* A-grade browsers only
+        section.logo-alt
+        {
+            figure
+            {
+                margin: 0;
+            }
+
+            a
+            {
+                overflow: hidden;
+                position: relative;
+                display: block;
+
+                width: $logo-size;
+                height: $logo-size;
+
+                background-color: $logo-color;
+
+                &:before
+                {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    opacity: 1;
+
+                    width: 250%;
+                    height: 200%;
+                    top: -161%;
+                    left: -75%;
+
+                    border-radius: 100%;
+
+                    background-color: $logo-highlight-color;
+                    @include radial-gradient(circle at 50% 50%, $logo-color 40%, $logo-highlight-color 100%);
+                }
+
+                figure:before
+                {
+                    content: "";
+                    position: absolute;
+                    display: block;
+
+                    width: 163%;
+                    height: 93%;
+                    bottom: -42%;
+                    left: -87%;
+                    @include transform(rotate(38deg));
+
+                    border-radius: 100%;
+
+                    background-color: $logo-checkmark-color;
+                    @include radial-gradient(circle at 72% 101%, $logo-color 0%, $logo-color 50%, $logo-checkmark-color 50%, lighten($logo-checkmark-color, 50%) 100%);
+                }
+
+                figure:after
+                {
+                    content: "";
+                    position: absolute;
+                    display: block;
+
+                    width: 106%;
+                    height: 178%;
+                    bottom: -69%;
+                    right: -60%;
+                    @include transform(rotate(16deg));
+
+                    border-radius: 100%;
+
+                    background-color: $logo-checkmark-color;
+                    @include radial-gradient(circle at 74% 59%, $logo-color 0%, $logo-color 50%, $logo-checkmark-color 50%, lighten($logo-checkmark-color, 50%) 100%);
+                }
+            }
+        } */ }
   body.scope-trustpilot article section.rating figure {
     display: inline-block;
     width: 48px;
@@ -13,10 +87,10 @@ body.scope-trustpilot article {
     font-size: 33.6px;
     line-height: 48px;
     text-align: center;
+    color: white;
     background-color: #d8d9d9;
     background: -webkit-linear-gradient(#d8d9d9, #c3c5c5);
-    background: linear-gradient(#d8d9d9, #c3c5c5);
-    color: white; }
+    background: linear-gradient(#d8d9d9, #c3c5c5); }
     body.scope-trustpilot article section.rating figure:first-child {
       margin-left: 0; }
     body.scope-trustpilot article section.rating figure.on {
@@ -25,25 +99,27 @@ body.scope-trustpilot article {
       background: linear-gradient(#f47324, #e45e0b); }
   body.scope-trustpilot article section.logo figure {
     margin: 0; }
-  body.scope-trustpilot article section.logo > figure {
+  body.scope-trustpilot article section.logo a {
+    display: block;
     overflow: hidden;
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     background-color: #f99d29; }
-    body.scope-trustpilot article section.logo > figure:before {
+    body.scope-trustpilot article section.logo a:before {
       content: "";
       position: absolute;
       display: block;
-      opacity: 0.3;
+      opacity: 0.4;
       width: 250%;
       height: 200%;
       top: -161%;
       left: -75%;
       border-radius: 100%;
-      background: -webkit-linear-gradient(#f47324, white);
-      background: linear-gradient(#f47324, white); }
-    body.scope-trustpilot article section.logo > figure figure:first-child {
+      background-color: white;
+      background-image: -webkit-radial-gradient(50% 65%, circle, #f99d29 0%, white 50%);
+      background-image: radial-gradient(  circle at 50% 65%, #f99d29 0%, white 50%); }
+    body.scope-trustpilot article section.logo a figure:first-child {
       content: "";
       position: absolute;
       display: block;
@@ -57,8 +133,10 @@ body.scope-trustpilot article {
       -o-transform: rotate(38deg);
       transform: rotate(38deg);
       border-radius: 100%;
-      background-color: black; }
-      body.scope-trustpilot article section.logo > figure figure:first-child:before {
+      background-color: black;
+      background-image: -webkit-radial-gradient(100% 100%, circle, black 40%, #666666 100%);
+      background-image: radial-gradient(  circle at 100% 100%, black 40%, #666666 100%); }
+      body.scope-trustpilot article section.logo a figure:first-child:before {
         content: "";
         position: absolute;
         display: block;
@@ -75,7 +153,7 @@ body.scope-trustpilot article {
         background-color: #f99d29;
         background: -webkit-linear-gradient(#f99d29, #d07606);
         background: linear-gradient(#f99d29, #d07606); }
-    body.scope-trustpilot article section.logo > figure figure:last-child {
+    body.scope-trustpilot article section.logo a figure:last-child {
       content: "";
       position: absolute;
       display: block;
@@ -90,9 +168,9 @@ body.scope-trustpilot article {
       transform: rotate(16deg);
       border-radius: 100%;
       background-color: black;
-      background: -webkit-linear-gradient(#404040, black);
-      background: linear-gradient(#404040, black); }
-      body.scope-trustpilot article section.logo > figure figure:last-child:before {
+      background-image: -webkit-radial-gradient(50% 100%, circle, black 40%, #666666 100%);
+      background-image: radial-gradient(  circle at 50% 100%, black 40%, #666666 100%); }
+      body.scope-trustpilot article section.logo a figure:last-child:before {
         content: "";
         position: absolute;
         display: block;
