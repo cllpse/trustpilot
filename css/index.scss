@@ -1,6 +1,182 @@
-@import "normalize/normalize.css";
+@import "box-sizing.css";
+@import "../normalize.css/normalize.css";
+@import "bourbon";
 
-body.trustpilot
+
+$ratings-star-size: 48px;
+$ratings-star-bg-color: #d8d9d9;
+$ratings-star-bg-on-color: #f47324;
+$ratings-star-color: #fff;
+
+$logo-size: 100px;
+$logo-color: #f99d29;
+$logo-checkmark-color: #000;
+$logo-highlight-color: #fff;
+
+
+body.scope-trustpilot
 {
-    background-color: red;
+    article
+    {
+        padding: 100px;
+        background-color: #fff;
+
+        section.rating
+        {
+            figure
+            {
+                display: inline-block;
+
+                width: $ratings-star-size;
+                height: $ratings-star-size;
+
+                margin: 0;
+                margin-left: $ratings-star-size / 10;
+
+                border-radius: 12%;
+
+                font-size: $ratings-star-size * 0.7;
+                line-height: $ratings-star-size;
+                text-align: center;
+
+                background-color: $ratings-star-bg-color;
+                @include background(linear-gradient($ratings-star-bg-color, darken($ratings-star-bg-color, 8%)));
+                color: $ratings-star-color;
+
+                &:first-child
+                {
+                    margin-left: 0;
+                }
+
+                &.on
+                {
+                    background-color: $ratings-star-bg-on-color;
+                    @include background(linear-gradient($ratings-star-bg-on-color, darken($ratings-star-bg-on-color, 8%)));
+                }
+            }
+        }
+
+        section.logo
+        {
+            figure
+            {
+                margin: 0;
+            }
+
+            > figure
+            {
+                overflow: hidden;
+                position: relative;
+
+                width: $logo-size;
+                height: $logo-size;
+
+                background-color: $logo-color;
+
+                &:before
+                {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    opacity: 0.3;
+
+                    width: 250%;
+                    height: 200%;
+                    top: -161%;
+                    left: -75%;
+
+                    border-radius: 100%;
+
+                    @include background(linear-gradient($ratings-star-bg-on-color, lighten($ratings-star-bg-on-color, 100%)));
+                }
+
+                figure:first-child
+                {
+                    content: "";
+                    position: absolute;
+                    display: block;
+
+                    width: 163%;
+                    height: 93%;
+                    bottom: -42%;
+                    left: -87%;
+                    @include transform(rotate(38deg));
+
+                    border-radius: 100%;
+
+                    background-color: $logo-checkmark-color;
+
+                    &:before
+                    {
+                        content: "";
+                        position: absolute;
+                        display: block;
+
+                        width: 70%;
+                        height: 93%;
+                        left: 32%;
+                        bottom: -14%;
+                        @include transform(rotate(-16deg));
+
+                        border-radius: 100%;
+
+                        background-color: $logo-color;
+                        @include background(linear-gradient($logo-color, darken($logo-color, 15%)));
+                    }
+
+                }
+
+                figure:last-child
+                {
+                    content: "";
+                    position: absolute;
+                    display: block;
+
+                    width: 106%;
+                    height: 178%;
+                    bottom: -69%;
+                    right: -60%;
+                    @include transform(rotate(16deg));
+
+                    border-radius: 100%;
+
+                    background-color: $logo-checkmark-color;
+                    @include background(linear-gradient(lighten($logo-checkmark-color, 25%), $logo-checkmark-color));
+
+                    &:before
+                    {
+                        content: "";
+                        position: absolute;
+                        display: block;
+
+                        width: 93%;
+                        height: 94%;
+                        left: 11%;
+                        bottom: -18%;
+
+                        border-radius: 100%;
+
+                        background-color: $logo-color;
+                        @include background(linear-gradient($logo-color, darken($logo-color, 15%)));
+                    }
+                }
+            }
+        }
+    }
+}
+
+@-moz-document url-prefix() /* target all versions of Firefox */
+{
+    body.scope-trustpilot article section.rating figure
+    {
+        font-size: $ratings-star-size * 1.3;
+    }
+}
+
+@media screen\0 /* target all versions of Internet Explorer */
+{
+    body.scope-trustpilot article section.rating figure
+    {
+        font-size: $ratings-star-size * 0.85;
+    }
 }

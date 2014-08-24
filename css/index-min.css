@@ -1,3 +1,113 @@
-@import url(normalize/normalize.css);
-body.trustpilot {
-  background-color: red; }
+@import url(box-sizing.css);
+@import url(../normalize.css/normalize.css);
+body.scope-trustpilot article {
+  padding: 100px;
+  background-color: #fff; }
+  body.scope-trustpilot article section.rating figure {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    margin-left: 4.8px;
+    border-radius: 12%;
+    font-size: 33.6px;
+    line-height: 48px;
+    text-align: center;
+    background-color: #d8d9d9;
+    background: -webkit-linear-gradient(#d8d9d9, #c3c5c5);
+    background: linear-gradient(#d8d9d9, #c3c5c5);
+    color: white; }
+    body.scope-trustpilot article section.rating figure:first-child {
+      margin-left: 0; }
+    body.scope-trustpilot article section.rating figure.on {
+      background-color: #f47324;
+      background: -webkit-linear-gradient(#f47324, #e45e0b);
+      background: linear-gradient(#f47324, #e45e0b); }
+  body.scope-trustpilot article section.logo figure {
+    margin: 0; }
+  body.scope-trustpilot article section.logo > figure {
+    overflow: hidden;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #f99d29; }
+    body.scope-trustpilot article section.logo > figure:before {
+      content: "";
+      position: absolute;
+      display: block;
+      opacity: 0.3;
+      width: 250%;
+      height: 200%;
+      top: -161%;
+      left: -75%;
+      border-radius: 100%;
+      background: -webkit-linear-gradient(#f47324, white);
+      background: linear-gradient(#f47324, white); }
+    body.scope-trustpilot article section.logo > figure figure:first-child {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 163%;
+      height: 93%;
+      bottom: -42%;
+      left: -87%;
+      -webkit-transform: rotate(38deg);
+      -moz-transform: rotate(38deg);
+      -ms-transform: rotate(38deg);
+      -o-transform: rotate(38deg);
+      transform: rotate(38deg);
+      border-radius: 100%;
+      background-color: black; }
+      body.scope-trustpilot article section.logo > figure figure:first-child:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 70%;
+        height: 93%;
+        left: 32%;
+        bottom: -14%;
+        -webkit-transform: rotate(-16deg);
+        -moz-transform: rotate(-16deg);
+        -ms-transform: rotate(-16deg);
+        -o-transform: rotate(-16deg);
+        transform: rotate(-16deg);
+        border-radius: 100%;
+        background-color: #f99d29;
+        background: -webkit-linear-gradient(#f99d29, #d07606);
+        background: linear-gradient(#f99d29, #d07606); }
+    body.scope-trustpilot article section.logo > figure figure:last-child {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 106%;
+      height: 178%;
+      bottom: -69%;
+      right: -60%;
+      -webkit-transform: rotate(16deg);
+      -moz-transform: rotate(16deg);
+      -ms-transform: rotate(16deg);
+      -o-transform: rotate(16deg);
+      transform: rotate(16deg);
+      border-radius: 100%;
+      background-color: black;
+      background: -webkit-linear-gradient(#404040, black);
+      background: linear-gradient(#404040, black); }
+      body.scope-trustpilot article section.logo > figure figure:last-child:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 93%;
+        height: 94%;
+        left: 11%;
+        bottom: -18%;
+        border-radius: 100%;
+        background-color: #f99d29;
+        background: -webkit-linear-gradient(#f99d29, #d07606);
+        background: linear-gradient(#f99d29, #d07606); }
+
+@-moz-document url-prefix() {
+  body.scope-trustpilot article section.rating figure {
+    font-size: 62.4px; } }
+@media screen\0 {
+  body.scope-trustpilot article section.rating figure {
+    font-size: 40.8px; } }
