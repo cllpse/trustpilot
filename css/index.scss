@@ -14,6 +14,7 @@ $widget-indent-shadow-color-rgba: rgba(0, 0, 0, 0.07);
 $widget-logo-text-base-color: #19171c;
 $widget-logo-text-highlight-color: #878c90;
 $widget-bar-base-color: #878c90;
+$widget-bar-highlight-color: #878c90;
 
 
 .scope-trustpilot
@@ -66,6 +67,11 @@ $widget-bar-base-color: #878c90;
             h2 a
             {
                 font-weight: 600;
+
+                &:hover
+                {
+                    text-decoration: none;
+                }
             }
 
             .ratings
@@ -76,7 +82,7 @@ $widget-bar-base-color: #878c90;
 
         section
         {
-            padding: 20px;
+            padding: 25px 20px;
 
             border-top: solid 1px $widget-indent-highlight-color;
             border-bottom: solid 1px $widget-indent-shadow-color;
@@ -87,11 +93,47 @@ $widget-bar-base-color: #878c90;
             {
                 color: $widget-bar-base-color;
             }
+
+            .bar-chart
+            {
+                margin: 10px 0;
+
+                figure
+                {
+                    width: 200px;
+                    height: 20px;
+                    margin: 0;
+                    border-radius: 5px;
+                    box-shadow: inset rgba(0, 0, 0, 0.15) 0 1px 1px;
+                }
+
+                > figure
+                {
+                    background-color: rgba(0, 0, 0, 0.075);
+
+                    & + figure
+                    {
+                        margin-top: 15px;
+                    }
+
+                    figure
+                    {
+                        position: relative;
+                        display: absolute;
+                        width: 100px;
+
+                        background-color: $widget-bar-highlight-color;
+
+                        @include border-right-radius(0);
+                    }
+                }
+            }
         }
 
         footer
         {
             padding: 20px;
+            padding-bottom: 30px;
 
             border-top: solid 1px $widget-indent-highlight-color;
             border-top-color: $widget-indent-highlight-color-rgba;
@@ -113,12 +155,14 @@ $widget-bar-base-color: #878c90;
 
             a
             {
+                display: inline-block;
+
+                height: 22px;
+
                 font-size: 0;
+                line-height: 22px;
                 letter-spacing: 0;
                 text-decoration: none;
-                height: 22px;
-                line-height: 22px;
-                display: inline-block;
                 vertical-align: middle;
 
                 span

@@ -89,14 +89,9 @@ $ratings-star-color: #fff;
 	    	background-color: transparent;
 	    }
 
-	    &.ratings-condensed > figure
-	    {
-	    	width: auto !important;
-	    }
-
 	    &.ratings-size-small > figure
 	    {
-    		@include ratings-size(30px);
+    		@include ratings-size(18px);
 	    }
 
 	    &.ratings-size-medium > figure
@@ -323,6 +318,11 @@ $ratings-star-color: #fff;
 {
     .scope-trustpilot div.ratings
     {
+    	&.ratings-size-small > figure
+		{
+			@include ratings-font-size-firefox(18px);
+		}
+
     	&.ratings-size-medium > figure
 		{
 			@include ratings-font-size-firefox(30px);
@@ -345,6 +345,11 @@ $ratings-star-color: #fff;
 {
     .scope-trustpilot div.ratings
     {
+    	&.ratings-size-medium > figure
+		{
+			@include ratings-font-size-internet-explorer(18px);
+		}
+
     	&.ratings-size-medium > figure
 		{
 			@include ratings-font-size-internet-explorer(30px);

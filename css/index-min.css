@@ -43,14 +43,12 @@ $ratings-star-color: #fff; */
   .scope-trustpilot div.ratings.ratings-transparent > figure {
     background: transparent;
     background-color: transparent; }
-  .scope-trustpilot div.ratings.ratings-condensed > figure {
-    width: auto !important; }
   .scope-trustpilot div.ratings.ratings-size-small > figure {
-    width: 30px;
-    height: 30px;
-    margin-left: 3px;
-    font-size: 21px;
-    line-height: 30px; }
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
+    font-size: 13px;
+    line-height: 18px; }
   .scope-trustpilot div.ratings.ratings-size-medium > figure {
     width: 30px;
     height: 30px;
@@ -224,6 +222,8 @@ $ratings-star-color: #fff; */
     background-image: radial-gradient(  circle at 74% 59%, #f99d29 0%, #f99d29 50%, black 50%, gray 100%); }
 
 @-moz-document url-prefix() {
+  .scope-trustpilot div.ratings.ratings-size-small > figure {
+    font-size: 24px; }
   .scope-trustpilot div.ratings.ratings-size-medium > figure {
     font-size: 39px; }
   .scope-trustpilot div.ratings.ratings-size-large > figure {
@@ -231,6 +231,8 @@ $ratings-star-color: #fff; */
   .scope-trustpilot div.ratings figure {
     font-size: 63px; } }
 @media screen\0 {
+  .scope-trustpilot div.ratings.ratings-size-medium > figure {
+    font-size: 16px; }
   .scope-trustpilot div.ratings.ratings-size-medium > figure {
     font-size: 26px; }
   .scope-trustpilot div.ratings.ratings-size-large > figure {
@@ -268,18 +270,40 @@ $ratings-star-color: #fff; */
       line-height: 48px; }
     .scope-trustpilot aside header h2 a {
       font-weight: 600; }
+      .scope-trustpilot aside header h2 a:hover {
+        text-decoration: none; }
     .scope-trustpilot aside header .ratings {
       margin: 20px 0 10px 0; }
   .scope-trustpilot aside section {
-    padding: 20px;
+    padding: 25px 20px;
     border-top: solid 1px #fdfdfd;
     border-bottom: solid 1px #ebebeb;
     border-top-color: rgba(255, 255, 255, 0.95);
     border-bottom-color: rgba(0, 0, 0, 0.07); }
     .scope-trustpilot aside section .ratings figure {
       color: #878c90; }
+    .scope-trustpilot aside section .bar-chart {
+      margin: 10px 0; }
+      .scope-trustpilot aside section .bar-chart figure {
+        width: 200px;
+        height: 20px;
+        margin: 0;
+        border-radius: 5px;
+        box-shadow: inset rgba(0, 0, 0, 0.15) 0 1px 1px; }
+      .scope-trustpilot aside section .bar-chart > figure {
+        background-color: rgba(0, 0, 0, 0.075); }
+        .scope-trustpilot aside section .bar-chart > figure + figure {
+          margin-top: 15px; }
+        .scope-trustpilot aside section .bar-chart > figure figure {
+          position: relative;
+          display: absolute;
+          width: 100px;
+          background-color: #878c90;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0; }
   .scope-trustpilot aside footer {
     padding: 20px;
+    padding-bottom: 30px;
     border-top: solid 1px #fdfdfd;
     border-top-color: rgba(255, 255, 255, 0.95);
     text-align: center; }
@@ -291,12 +315,12 @@ $ratings-star-color: #fff; */
       height: 22px;
       width: 22px; }
     .scope-trustpilot aside footer a {
+      display: inline-block;
+      height: 22px;
       font-size: 0;
+      line-height: 22px;
       letter-spacing: 0;
       text-decoration: none;
-      height: 22px;
-      line-height: 22px;
-      display: inline-block;
       vertical-align: middle; }
       .scope-trustpilot aside footer a span {
         font-size: 22px;
