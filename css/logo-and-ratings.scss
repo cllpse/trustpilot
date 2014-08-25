@@ -1,0 +1,20 @@
+@import "box-sizing.css";
+@import "../normalize.css/normalize.css";
+@import "bourbon";
+@import "_controls.scss";
+
+.scope-trustpilot
+{
+	.ratings
+	{
+		margin: 100px;
+		text-align: center;
+	}
+
+	.logo, .logo-alt
+	{
+		width: 400px;
+		height: 400px;
+		margin: 100px auto;
+	}
+}

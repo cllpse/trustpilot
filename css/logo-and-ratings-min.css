@@ -237,71 +237,10 @@ $ratings-star-color: #fff; */
     font-size: 41px; }
   .scope-trustpilot div.ratings figure {
     font-size: 41px; } }
-.scope-trustpilot aside {
-  width: 240px;
-  margin: 0 auto;
-  margin-top: 200px;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  background-image: -webkit-radial-gradient(50% 50%, circle, #eeeeee 0%, #f9f9f9 100%);
-  background-image: radial-gradient(  circle at 50% 50%, #eeeeee 0%, #f9f9f9 100%); }
-  .scope-trustpilot aside h1, .scope-trustpilot aside h2, .scope-trustpilot aside h3, .scope-trustpilot aside p, .scope-trustpilot aside a {
-    display: inline-block;
-    margin: 0;
-    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 20.72px;
-    color: #333; }
-  .scope-trustpilot aside h1 {
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 71.04px;
-    color: #35d888; }
-  .scope-trustpilot aside h2, .scope-trustpilot aside h2 a {
-    font-weight: 500; }
-  .scope-trustpilot aside header {
-    padding: 20px;
-    border-bottom: solid 1px #ebebeb;
-    border-bottom-color: rgba(0, 0, 0, 0.07); }
-    .scope-trustpilot aside header h1 {
-      line-height: 48px; }
-    .scope-trustpilot aside header h2 a {
-      font-weight: 600; }
-    .scope-trustpilot aside header .ratings {
-      margin: 20px 0 10px 0; }
-  .scope-trustpilot aside section {
-    padding: 20px;
-    border-top: solid 1px #fdfdfd;
-    border-bottom: solid 1px #ebebeb;
-    border-top-color: rgba(255, 255, 255, 0.95);
-    border-bottom-color: rgba(0, 0, 0, 0.07); }
-    .scope-trustpilot aside section .ratings figure {
-      color: #878c90; }
-  .scope-trustpilot aside footer {
-    padding: 20px;
-    border-top: solid 1px #fdfdfd;
-    border-top-color: rgba(255, 255, 255, 0.95);
-    text-align: center; }
-    .scope-trustpilot aside footer h3 {
-      display: block;
-      margin-bottom: 10px; }
-    .scope-trustpilot aside footer .logo {
-      display: inline-block;
-      height: 22px;
-      width: 22px; }
-    .scope-trustpilot aside footer a {
-      font-size: 0;
-      letter-spacing: 0;
-      text-decoration: none;
-      height: 22px;
-      line-height: 22px;
-      display: inline-block;
-      vertical-align: middle; }
-      .scope-trustpilot aside footer a span {
-        font-size: 22px;
-        font-weight: 500;
-        line-height: 22px;
-        color: #19171c; }
-      .scope-trustpilot aside footer a span + span {
-        color: #878c90; }
+.scope-trustpilot .ratings {
+  margin: 100px;
+  text-align: center; }
+.scope-trustpilot .logo, .scope-trustpilot .logo-alt {
+  width: 400px;
+  height: 400px;
+  margin: 100px auto; }

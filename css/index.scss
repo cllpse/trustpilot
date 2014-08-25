@@ -1,263 +1,140 @@
 @import "box-sizing.css";
 @import "../normalize.css/normalize.css";
 @import "bourbon";
+@import "_controls.scss";
 
 
-$ratings-star-size: 48px;
-$ratings-star-bg-color: #d8d9d9;
-$ratings-star-bg-on-color: #f47324;
-$ratings-star-color: #fff;
+$widget-base-bg-color: #eeeeee;
+$widget-highlight-bg-color: #f9f9f9;
+$widget-font-highlight-color: #35d888;
+$widget-indent-highlight-color: #fdfdfd;
+$widget-indent-shadow-color: #ebebeb;
+$widget-indent-highlight-color-rgba: rgba(255, 255, 255, 0.95);
+$widget-indent-shadow-color-rgba: rgba(0, 0, 0, 0.07);
+$widget-logo-text-base-color: #19171c;
+$widget-logo-text-highlight-color: #878c90;
+$widget-bar-base-color: #878c90;
 
-$logo-size: 300px;
-$logo-color: #f99d29;
-$logo-checkmark-color: #000;
-$logo-highlight-color: #fff;
 
-
-body.scope-trustpilot
+.scope-trustpilot
 {
-    article
+    aside
     {
-        padding: 100px;
-        background-color: #fff;
+        width: 240px;
+        margin: 0 auto;
+        margin-top: 200px;
+        border-radius: 5px;
+        background-color: $widget-highlight-bg-color;
+        @include radial-gradient(circle at 50% 50%, $widget-base-bg-color 0%, $widget-highlight-bg-color 100%);
 
-        section.rating
+        h1, h2, h3, p, a
         {
-            figure
+            display: inline-block;
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 14px * 1.48;
+            color: #333;
+        }
+
+        h1
+        {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 48px * 1.48;
+            color: $widget-font-highlight-color;
+        }
+
+        h2, h2 a
+        {
+            font-weight: 500;
+        }
+
+        header
+        {
+            padding: 20px;
+
+            border-bottom: solid 1px $widget-indent-shadow-color;
+            border-bottom-color: $widget-indent-shadow-color-rgba;
+
+            h1
+            {
+                line-height: 48px;
+            }
+
+            h2 a
+            {
+                font-weight: 600;
+            }
+
+            .ratings
+            {
+                margin: 20px 0 10px 0;
+            }
+        }
+
+        section
+        {
+            padding: 20px;
+
+            border-top: solid 1px $widget-indent-highlight-color;
+            border-bottom: solid 1px $widget-indent-shadow-color;
+            border-top-color: $widget-indent-highlight-color-rgba;
+            border-bottom-color: $widget-indent-shadow-color-rgba;
+
+            .ratings figure
+            {
+                color: $widget-bar-base-color;
+            }
+        }
+
+        footer
+        {
+            padding: 20px;
+
+            border-top: solid 1px $widget-indent-highlight-color;
+            border-top-color: $widget-indent-highlight-color-rgba;
+
+            text-align: center;
+
+            h3
+            {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .logo
             {
                 display: inline-block;
-
-                width: $ratings-star-size;
-                height: $ratings-star-size;
-
-                margin: 0;
-                margin-left: $ratings-star-size / 10;
-
-                border-radius: 12%;
-
-                font-size: $ratings-star-size * 0.7;
-                line-height: $ratings-star-size;
-                text-align: center;
-
-                color: $ratings-star-color;
-
-                background-color: $ratings-star-bg-color;
-                @include background(linear-gradient($ratings-star-bg-color, darken($ratings-star-bg-color, 8%)));
-
-                &:first-child
-                {
-                    margin-left: 0;
-                }
-
-                &.on
-                {
-                    background-color: $ratings-star-bg-on-color;
-                    @include background(linear-gradient($ratings-star-bg-on-color, darken($ratings-star-bg-on-color, 8%)));
-                }
-            }
-        }
-
-        section.logo
-        {
-            figure
-            {
-                margin: 0;
+                height: 22px;
+                width: 22px;
             }
 
             a
             {
-                display: block;
-                overflow: hidden;
-                position: relative;
+                font-size: 0;
+                letter-spacing: 0;
+                text-decoration: none;
+                height: 22px;
+                line-height: 22px;
+                display: inline-block;
+                vertical-align: middle;
 
-                width: $logo-size;
-                height: $logo-size;
-
-                background-color: $logo-color;
-
-                &:before
+                span
                 {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    opacity: 0.4;
+                    font-size: 22px;
+                    font-weight: 500;
+                    line-height: 22px;
 
-                    width: 250%;
-                    height: 200%;
-                    top: -161%;
-                    left: -75%;
-
-                    border-radius: 100%;
-
-                    background-color: $logo-highlight-color;
-                    @include radial-gradient(circle at 50% 65%, $logo-color 0%, $logo-highlight-color 50%);
+                    color: $widget-logo-text-base-color;
                 }
 
-                figure:first-child
+                span + span
                 {
-                    content: "";
-                    position: absolute;
-                    display: block;
-
-                    width: 163%;
-                    height: 93%;
-                    bottom: -42%;
-                    left: -87%;
-
-                    @include transform(rotate(38deg));
-
-                    border-radius: 100%;
-
-                    background-color: $logo-checkmark-color;
-                    @include radial-gradient(circle at 100% 100%, $logo-checkmark-color 40%, lighten($logo-checkmark-color, 40%) 100%);
-
-                    &:before
-                    {
-                        content: "";
-                        position: absolute;
-                        display: block;
-
-                        width: 70%;
-                        height: 93%;
-                        left: 32%;
-                        bottom: -14%;
-                        @include transform(rotate(-16deg));
-
-                        border-radius: 100%;
-
-                        background-color: $logo-color;
-                        @include background(linear-gradient($logo-color, darken($logo-color, 15%)));
-                    }
-
-                }
-
-                figure:last-child
-                {
-                    content: "";
-                    position: absolute;
-                    display: block;
-
-                    width: 106%;
-                    height: 178%;
-                    bottom: -69%;
-                    right: -60%;
-
-                    @include transform(rotate(16deg));
-
-                    border-radius: 100%;
-
-                    background-color: $logo-checkmark-color;
-                    @include radial-gradient(circle at 50% 100%, $logo-checkmark-color 40%, lighten($logo-checkmark-color, 40%) 100%);
-
-                    &:before
-                    {
-                        content: "";
-                        position: absolute;
-                        display: block;
-
-                        width: 93%;
-                        height: 94%;
-                        left: 11%;
-                        bottom: -18%;
-
-                        border-radius: 100%;
-
-                        background-color: $logo-color;
-                        @include background(linear-gradient($logo-color, darken($logo-color, 15%)));
-                    }
+                    color: $widget-logo-text-highlight-color;
                 }
             }
         }
-
-        /* A-grade browsers only
-        section.logo-alt
-        {
-            figure
-            {
-                margin: 0;
-            }
-
-            a
-            {
-                overflow: hidden;
-                position: relative;
-                display: block;
-
-                width: $logo-size;
-                height: $logo-size;
-
-                background-color: $logo-color;
-
-                &:before
-                {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    opacity: 1;
-
-                    width: 250%;
-                    height: 200%;
-                    top: -161%;
-                    left: -75%;
-
-                    border-radius: 100%;
-
-                    background-color: $logo-highlight-color;
-                    @include radial-gradient(circle at 50% 50%, $logo-color 40%, $logo-highlight-color 100%);
-                }
-
-                figure:before
-                {
-                    content: "";
-                    position: absolute;
-                    display: block;
-
-                    width: 163%;
-                    height: 93%;
-                    bottom: -42%;
-                    left: -87%;
-                    @include transform(rotate(38deg));
-
-                    border-radius: 100%;
-
-                    background-color: $logo-checkmark-color;
-                    @include radial-gradient(circle at 72% 101%, $logo-color 0%, $logo-color 50%, $logo-checkmark-color 50%, lighten($logo-checkmark-color, 50%) 100%);
-                }
-
-                figure:after
-                {
-                    content: "";
-                    position: absolute;
-                    display: block;
-
-                    width: 106%;
-                    height: 178%;
-                    bottom: -69%;
-                    right: -60%;
-                    @include transform(rotate(16deg));
-
-                    border-radius: 100%;
-
-                    background-color: $logo-checkmark-color;
-                    @include radial-gradient(circle at 74% 59%, $logo-color 0%, $logo-color 50%, $logo-checkmark-color 50%, lighten($logo-checkmark-color, 50%) 100%);
-                }
-            }
-        } */
-    }
-}
-
-@-moz-document url-prefix() /* target all versions of Firefox */
-{
-    body.scope-trustpilot article section.rating figure
-    {
-        font-size: $ratings-star-size * 1.3;
-    }
-}
-
-@media screen\0 /* target all versions of Internet Explorer */
-{
-    body.scope-trustpilot article section.rating figure
-    {
-        font-size: $ratings-star-size * 0.85;
     }
 }
