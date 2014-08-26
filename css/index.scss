@@ -1,7 +1,11 @@
-@import "box-sizing.css";
+@import "_box-sizing.css";
 @import "../normalize.css/normalize.css";
 @import "bourbon";
-@import "_controls.scss";
+
+@import "_logo.scss";
+@import "_ratings.scss";
+@import "_bar-chart.scss";
+@import "_pie-chart.scss";
 
 
 $widget-base-bg-color: #eeeeee;
@@ -57,9 +61,9 @@ $widget-bar-highlight-color: #878c90;
 
         h1
         {
-            font-size: 48px;
-            font-weight: 500;
-            line-height: 48px * 1.48;
+            font-size: 50px;
+            font-weight: 600;
+            line-height: 50px * 1.48;
             color: $widget-font-highlight-color;
         }
 
@@ -105,9 +109,11 @@ $widget-bar-highlight-color: #878c90;
             border-top-color: $widget-indent-highlight-color-rgba;
             border-bottom-color: $widget-indent-shadow-color-rgba;
 
-            .ratings figure
+            .ratings figure /* TODO: fiddle with shadows */
             {
-                color: $widget-bar-base-color;
+                color: #c6c6c6;
+                color: rgba(0, 0, 0, 0.23);
+                text-shadow: 0px 1px rgba(255, 255, 255, 0.95);
             }
 
             .bar-chart

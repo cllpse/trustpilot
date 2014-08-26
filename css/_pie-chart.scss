@@ -1,0 +1,55 @@
+$ratings-green: #35d888;
+$ratings-orange: #faac49;
+$ratings-red: #fa4949;
+
+
+.scope-trustpilot
+{
+
+	div.pie-chart
+	{
+		legend
+		{
+			ul
+			{
+				margin: 0;
+				margin-top: 20px;
+				padding: 0;
+				list-style: none;
+
+				li
+				{
+					margin-top: 5px;
+
+					&:first-child
+					{
+						margin-top: 0;
+					}
+
+					&:before
+					{
+						content: "";
+						display: inline-block;
+						position: absolute;
+						width: 14px;
+						height: 14px;
+						margin-top: 1px;
+						border-radius: 100%;
+						background-color: $ratings-green;
+					}
+
+					& + li:before { background-color: $ratings-orange; }
+
+					& + li + li:before { background-color: $ratings-red; }
+
+					p
+					{
+						padding-left: 21px;
+						font-weight: 400;
+						line-height: 14px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,175 @@
+/* TRUSTPILOT COLOR-SCHEME
+$ratings-star-size: 48px;
+$ratings-star-bg-color: #d8d9d9;
+$ratings-star-bg-on-color: #f47324;
+$ratings-star-color: #fff; */
+
+
+$ratings-star-size: 48px;
+$ratings-star-bg-color: #d8d9d9;
+$ratings-star-bg-on-color: #35d888;
+$ratings-star-color: #fff;
+
+
+@mixin ratings-star-on
+{
+    background-color: $ratings-star-bg-on-color;
+    @include background(linear-gradient($ratings-star-bg-on-color, darken($ratings-star-bg-on-color, 8%)));
+}
+
+@mixin ratings-star-off
+{
+    background-color: $ratings-star-bg-color;
+    @include background(linear-gradient($ratings-star-bg-color, darken($ratings-star-bg-color, 8%)));
+}
+
+@mixin ratings-size($n)
+{
+    width: $n;
+    height: $n;
+    margin-left: ceil($n / 10);
+    font-size: ceil($n * 0.7);
+    line-height: $n;
+}
+
+@mixin ratings-font-size-firefox($n)
+{
+	font-size: ceil($n * 1.3);
+}
+
+@mixin ratings-font-size-internet-explorer($n)
+{
+	font-size: ceil($n * 0.85);
+}
+
+
+.scope-trustpilot
+{
+	div.ratings
+	{
+	    font-size: 0;
+	    letter-spacing: 0;
+
+	    &.rating-1
+	    {
+	        figure:first-child { @include ratings-star-on; }
+	    }
+
+	    &.rating-2
+	    {
+	        figure { @include ratings-star-on; }
+	        figure + figure + figure { @include ratings-star-off; }
+	    }
+
+	    &.rating-3
+	    {
+	        figure { @include ratings-star-on; }
+	        figure + figure + figure + figure { @include ratings-star-off; }
+	    }
+
+	    &.rating-4
+	    {
+	        figure { @include ratings-star-on; }
+	        figure + figure + figure + figure + figure { @include ratings-star-off; }
+	    }
+
+	    &.rating-5
+	    {
+	        figure { @include ratings-star-on; }
+	    }
+
+	    &.ratings-transparent > figure
+	    {
+	    	background: transparent;
+	    	background-color: transparent;
+	    }
+
+	    &.ratings-size-small > figure
+	    {
+    		@include ratings-size(18px);
+	    }
+
+	    &.ratings-size-medium > figure
+	    {
+    		@include ratings-size(30px);
+	    }
+
+	    &.ratings-size-large > figure
+	    {
+    		@include ratings-size(48px);
+	    }
+
+	    figure
+	    {
+	    	display: inline-block;
+	        margin: 0;
+
+	        @include ratings-size(48px);
+
+	        border-radius: 12%;
+	        text-align: center;
+
+	        @include ratings-star-off;
+	        color: $ratings-star-color;
+
+	        &:first-child
+	        {
+	            margin-left: 0;
+	        }
+	    }
+	}
+}
+
+
+@-moz-document url-prefix() /* target all versions of Firefox */
+{
+    .scope-trustpilot div.ratings
+    {
+    	&.ratings-size-small > figure
+		{
+			@include ratings-font-size-firefox(18px);
+		}
+
+    	&.ratings-size-medium > figure
+		{
+			@include ratings-font-size-firefox(30px);
+		}
+
+		&.ratings-size-large > figure
+		{
+			@include ratings-font-size-firefox(48px);
+		}
+
+		figure
+		{
+			@include ratings-font-size-firefox(48px);
+		}
+    }
+}
+
+
+@media screen\0 /* target all versions of Internet Explorer */
+{
+    .scope-trustpilot div.ratings
+    {
+    	&.ratings-size-medium > figure
+		{
+			@include ratings-font-size-internet-explorer(18px);
+		}
+
+    	&.ratings-size-medium > figure
+		{
+			@include ratings-font-size-internet-explorer(30px);
+		}
+
+		&.ratings-size-large > figure
+		{
+			@include ratings-font-size-internet-explorer(48px);
+		}
+
+		figure
+		{
+			@include ratings-font-size-internet-explorer(48px);
+		}
+    }
+}

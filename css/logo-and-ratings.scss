@@ -1,7 +1,17 @@
 @import "box-sizing.css";
 @import "../normalize.css/normalize.css";
 @import "bourbon";
-@import "_controls.scss";
+
+@import "_logo.scss";
+@import "_ratings.scss";
+
+
+/* TRUSTPILOT COLOR-SCHEME
+$ratings-star-size: 48px;
+$ratings-star-bg-color: #d8d9d9;
+$ratings-star-bg-on-color: #f47324;
+$ratings-star-color: #fff; */
+
 
 .scope-trustpilot
 {

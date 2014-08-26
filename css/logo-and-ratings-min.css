@@ -1,82 +1,5 @@
 @import url(box-sizing.css);
 @import url(../normalize.css/normalize.css);
-/* TRUSTPILOT COLOR-SCHEME
-$ratings-star-size: 48px;
-$ratings-star-bg-color: #d8d9d9;
-$ratings-star-bg-on-color: #f47324;
-$ratings-star-color: #fff; */
-.scope-trustpilot div.ratings {
-  font-size: 0;
-  letter-spacing: 0; }
-  .scope-trustpilot div.ratings.rating-1 figure:first-child {
-    background-color: #35d888;
-    background: -webkit-linear-gradient(#35d888, #25bf74);
-    background: linear-gradient(#35d888, #25bf74); }
-  .scope-trustpilot div.ratings.rating-2 figure {
-    background-color: #35d888;
-    background: -webkit-linear-gradient(#35d888, #25bf74);
-    background: linear-gradient(#35d888, #25bf74); }
-  .scope-trustpilot div.ratings.rating-2 figure + figure + figure {
-    background-color: #d8d9d9;
-    background: -webkit-linear-gradient(#d8d9d9, #c3c5c5);
-    background: linear-gradient(#d8d9d9, #c3c5c5); }
-  .scope-trustpilot div.ratings.rating-3 figure {
-    background-color: #35d888;
-    background: -webkit-linear-gradient(#35d888, #25bf74);
-    background: linear-gradient(#35d888, #25bf74); }
-  .scope-trustpilot div.ratings.rating-3 figure + figure + figure + figure {
-    background-color: #d8d9d9;
-    background: -webkit-linear-gradient(#d8d9d9, #c3c5c5);
-    background: linear-gradient(#d8d9d9, #c3c5c5); }
-  .scope-trustpilot div.ratings.rating-4 figure {
-    background-color: #35d888;
-    background: -webkit-linear-gradient(#35d888, #25bf74);
-    background: linear-gradient(#35d888, #25bf74); }
-  .scope-trustpilot div.ratings.rating-4 figure + figure + figure + figure + figure {
-    background-color: #d8d9d9;
-    background: -webkit-linear-gradient(#d8d9d9, #c3c5c5);
-    background: linear-gradient(#d8d9d9, #c3c5c5); }
-  .scope-trustpilot div.ratings.rating-5 figure {
-    background-color: #35d888;
-    background: -webkit-linear-gradient(#35d888, #25bf74);
-    background: linear-gradient(#35d888, #25bf74); }
-  .scope-trustpilot div.ratings.ratings-transparent > figure {
-    background: transparent;
-    background-color: transparent; }
-  .scope-trustpilot div.ratings.ratings-size-small > figure {
-    width: 18px;
-    height: 18px;
-    margin-left: 2px;
-    font-size: 13px;
-    line-height: 18px; }
-  .scope-trustpilot div.ratings.ratings-size-medium > figure {
-    width: 30px;
-    height: 30px;
-    margin-left: 3px;
-    font-size: 21px;
-    line-height: 30px; }
-  .scope-trustpilot div.ratings.ratings-size-large > figure {
-    width: 48px;
-    height: 48px;
-    margin-left: 5px;
-    font-size: 34px;
-    line-height: 48px; }
-  .scope-trustpilot div.ratings figure {
-    display: inline-block;
-    margin: 0;
-    width: 48px;
-    height: 48px;
-    margin-left: 5px;
-    font-size: 34px;
-    line-height: 48px;
-    border-radius: 12%;
-    text-align: center;
-    background-color: #d8d9d9;
-    background: -webkit-linear-gradient(#d8d9d9, #c3c5c5);
-    background: linear-gradient(#d8d9d9, #c3c5c5);
-    color: white; }
-    .scope-trustpilot div.ratings figure:first-child {
-      margin-left: 0; }
 .scope-trustpilot div.logo {
   display: block; }
   .scope-trustpilot div.logo figure {
@@ -220,23 +143,84 @@ $ratings-star-color: #fff; */
     background-color: black;
     background-image: -webkit-radial-gradient(74% 59%, circle, #f99d29 0%, #f99d29 50%, black 50%, gray 100%);
     background-image: radial-gradient(  circle at 74% 59%, #f99d29 0%, #f99d29 50%, black 50%, gray 100%); }
-.scope-trustpilot div.bar-chart figure {
-  margin: 0;
-  border-radius: 5px;
-  box-shadow: inset rgba(0, 0, 0, 0.15) 0 1px 1px; }
-.scope-trustpilot div.bar-chart.bar-chart-size-default figure {
-  width: 200px;
-  height: 20px; }
-  .scope-trustpilot div.bar-chart.bar-chart-size-default figure + figure {
-    margin-top: 15px; }
-.scope-trustpilot div.bar-chart > figure {
-  background-color: rgba(0, 0, 0, 0.075); }
-  .scope-trustpilot div.bar-chart > figure figure {
-    position: relative;
-    display: absolute;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0; }
+
+/* TRUSTPILOT COLOR-SCHEME
+$ratings-star-size: 48px;
+$ratings-star-bg-color: #d8d9d9;
+$ratings-star-bg-on-color: #f47324;
+$ratings-star-color: #fff; */
+.scope-trustpilot div.ratings {
+  font-size: 0;
+  letter-spacing: 0; }
+  .scope-trustpilot div.ratings.rating-1 figure:first-child {
+    background-color: #35d888;
+    background: -webkit-linear-gradient(#35d888, #25bf74);
+    background: linear-gradient(#35d888, #25bf74); }
+  .scope-trustpilot div.ratings.rating-2 figure {
+    background-color: #35d888;
+    background: -webkit-linear-gradient(#35d888, #25bf74);
+    background: linear-gradient(#35d888, #25bf74); }
+  .scope-trustpilot div.ratings.rating-2 figure + figure + figure {
+    background-color: #d8d9d9;
+    background: -webkit-linear-gradient(#d8d9d9, #c3c5c5);
+    background: linear-gradient(#d8d9d9, #c3c5c5); }
+  .scope-trustpilot div.ratings.rating-3 figure {
+    background-color: #35d888;
+    background: -webkit-linear-gradient(#35d888, #25bf74);
+    background: linear-gradient(#35d888, #25bf74); }
+  .scope-trustpilot div.ratings.rating-3 figure + figure + figure + figure {
+    background-color: #d8d9d9;
+    background: -webkit-linear-gradient(#d8d9d9, #c3c5c5);
+    background: linear-gradient(#d8d9d9, #c3c5c5); }
+  .scope-trustpilot div.ratings.rating-4 figure {
+    background-color: #35d888;
+    background: -webkit-linear-gradient(#35d888, #25bf74);
+    background: linear-gradient(#35d888, #25bf74); }
+  .scope-trustpilot div.ratings.rating-4 figure + figure + figure + figure + figure {
+    background-color: #d8d9d9;
+    background: -webkit-linear-gradient(#d8d9d9, #c3c5c5);
+    background: linear-gradient(#d8d9d9, #c3c5c5); }
+  .scope-trustpilot div.ratings.rating-5 figure {
+    background-color: #35d888;
+    background: -webkit-linear-gradient(#35d888, #25bf74);
+    background: linear-gradient(#35d888, #25bf74); }
+  .scope-trustpilot div.ratings.ratings-transparent > figure {
+    background: transparent;
+    background-color: transparent; }
+  .scope-trustpilot div.ratings.ratings-size-small > figure {
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
+    font-size: 13px;
+    line-height: 18px; }
+  .scope-trustpilot div.ratings.ratings-size-medium > figure {
+    width: 30px;
+    height: 30px;
+    margin-left: 3px;
+    font-size: 21px;
+    line-height: 30px; }
+  .scope-trustpilot div.ratings.ratings-size-large > figure {
+    width: 48px;
+    height: 48px;
+    margin-left: 5px;
+    font-size: 34px;
+    line-height: 48px; }
+  .scope-trustpilot div.ratings figure {
+    display: inline-block;
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    margin-left: 5px;
+    font-size: 34px;
+    line-height: 48px;
+    border-radius: 12%;
+    text-align: center;
+    background-color: #d8d9d9;
+    background: -webkit-linear-gradient(#d8d9d9, #c3c5c5);
+    background: linear-gradient(#d8d9d9, #c3c5c5);
+    color: white; }
+    .scope-trustpilot div.ratings figure:first-child {
+      margin-left: 0; }
 
 @-moz-document url-prefix() {
   .scope-trustpilot div.ratings.ratings-size-small > figure {

@@ -1,0 +1,52 @@
+$ratings-bar-fallback-bg-color: #d8d9d9;
+$ratings-first-bar-bg-color: #35d888;
+$ratings-second-bar-bg-color: #35d888;
+$ratings-third-bar-bg-color: #faac49;
+$ratings-fourth-bar-bg-color: #faac49;
+$ratings-fifth-bar-bg-color: #fa4949;
+
+
+.scope-trustpilot
+{
+	div.bar-chart
+	{
+	    figure
+	    {
+	        margin: 0;
+	        border-radius: 5px;
+	        box-shadow: inset rgba(0, 0, 0, 0.15) 0 1px 1px;
+	    }
+
+	    &.bar-chart-size-default figure
+	    {
+	    	width: 200px;
+	    	height: 20px;
+
+	    	& + figure
+	        {
+	            margin-top: 15px;
+	        }
+	    }
+
+	    > figure
+	    {
+	        background-color: $ratings-bar-fallback-bg-color;
+	        background-color: rgba(0, 0, 0, 0.075);
+
+	        figure
+	        {
+	            position: relative;
+	            display: absolute;
+
+	            background-color: $ratings-first-bar-bg-color;
+
+	            @include border-right-radius(0);
+	        }
+	    }
+
+	    figure + figure figure { background-color: $ratings-second-bar-bg-color; }
+	    figure + figure + figure figure { background-color: $ratings-third-bar-bg-color; }
+	    figure + figure + figure + figure figure { background-color: $ratings-fourth-bar-bg-color; }
+	    figure + figure + figure + figure + figure figure { background-color: $ratings-fifth-bar-bg-color; }
+	}
+}
