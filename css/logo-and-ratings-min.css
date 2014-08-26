@@ -135,7 +135,7 @@ $ratings-star-color: #fff; */
         background-color: #f99d29;
         background: -webkit-linear-gradient(#f99d29, #d07606);
         background: linear-gradient(#f99d29, #d07606); }
-    .scope-trustpilot div.logo a figure:last-child {
+    .scope-trustpilot div.logo a figure + figure {
       content: "";
       position: absolute;
       display: block;
@@ -152,7 +152,7 @@ $ratings-star-color: #fff; */
       background-color: black;
       background-image: -webkit-radial-gradient(50% 100%, circle, black 40%, #666666 100%);
       background-image: radial-gradient(  circle at 50% 100%, black 40%, #666666 100%); }
-      .scope-trustpilot div.logo a figure:last-child:before {
+      .scope-trustpilot div.logo a figure + figure:before {
         content: "";
         position: absolute;
         display: block;
@@ -220,6 +220,23 @@ $ratings-star-color: #fff; */
     background-color: black;
     background-image: -webkit-radial-gradient(74% 59%, circle, #f99d29 0%, #f99d29 50%, black 50%, gray 100%);
     background-image: radial-gradient(  circle at 74% 59%, #f99d29 0%, #f99d29 50%, black 50%, gray 100%); }
+.scope-trustpilot div.bar-chart figure {
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: inset rgba(0, 0, 0, 0.15) 0 1px 1px; }
+.scope-trustpilot div.bar-chart.bar-chart-size-default figure {
+  width: 200px;
+  height: 20px; }
+  .scope-trustpilot div.bar-chart.bar-chart-size-default figure + figure {
+    margin-top: 15px; }
+.scope-trustpilot div.bar-chart > figure {
+  background-color: rgba(0, 0, 0, 0.075); }
+  .scope-trustpilot div.bar-chart > figure figure {
+    position: relative;
+    display: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
 
 @-moz-document url-prefix() {
   .scope-trustpilot div.ratings.ratings-size-small > figure {

@@ -19,11 +19,26 @@ $widget-bar-highlight-color: #878c90;
 
 .scope-trustpilot
 {
+    &.data-error aside
+    {
+        display: none;
+    }
+
+    &.data-working aside
+    {
+        visibility: hidden;
+    }
+
+    &.data-loaded aside
+    {
+        display: block;
+    }
+
     aside
     {
         width: 240px;
-        margin: 0 auto;
-        margin-top: 200px;
+        margin: 100px auto;
+
         border-radius: 5px;
         background-color: $widget-highlight-bg-color;
         @include radial-gradient(circle at 50% 50%, $widget-base-bg-color 0%, $widget-highlight-bg-color 100%);
@@ -32,6 +47,7 @@ $widget-bar-highlight-color: #878c90;
         {
             display: inline-block;
             margin: 0;
+
             font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
             font-size: 14px;
             font-weight: 300;
@@ -97,36 +113,6 @@ $widget-bar-highlight-color: #878c90;
             .bar-chart
             {
                 margin: 10px 0;
-
-                figure
-                {
-                    width: 200px;
-                    height: 20px;
-                    margin: 0;
-                    border-radius: 5px;
-                    box-shadow: inset rgba(0, 0, 0, 0.15) 0 1px 1px;
-                }
-
-                > figure
-                {
-                    background-color: rgba(0, 0, 0, 0.075);
-
-                    & + figure
-                    {
-                        margin-top: 15px;
-                    }
-
-                    figure
-                    {
-                        position: relative;
-                        display: absolute;
-                        width: 100px;
-
-                        background-color: $widget-bar-highlight-color;
-
-                        @include border-right-radius(0);
-                    }
-                }
             }
         }
 
@@ -149,8 +135,8 @@ $widget-bar-highlight-color: #878c90;
             .logo
             {
                 display: inline-block;
-                height: 22px;
                 width: 22px;
+                height: 22px;
             }
 
             a

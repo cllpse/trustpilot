@@ -1,10 +1,9 @@
-var Ratings = function (collection)
+var RatingsHelper = function (collection)
 {
     var ratings = [];
-    var stars = [];
 
 
-    (function () /* populate ratings array */
+    (function ()
     {
 		var index = collection.length;
 
@@ -42,25 +41,105 @@ var Ratings = function (collection)
 			sum += ratings[index];
 		}
 
-		return Math.ceil(sum / (length - 1));
+		return sum / length;
+    };
+
+
+    this.getAverageRatingCeiled = function ()
+    {
+		return Math.ceil(this.getAverageRating());
+    };
+
+
+    this.getAverageRatingFormatted = function ()
+    {
+		return this.getAverageRatingCeiled() + ",0";
+    };
+
+
+    this.getStarDistribution = function ()
+    {
+    	var index = ratings.length;
+    	var distribution = [0, 0, 0, 0, 0];
+
+    	while (index)
+		{
+			index--;
+
+			distribution[ratings[index] - 1] += 1;
+		}
+
+		return distribution;
+    };
+
+
+    this.getStarDistributionPercentages = function ()
+    {
+    	var distribution = this.getStarDistribution();
+    	var index = distribution.length;
+
+    	while (index)
+		{
+			index--;
+
+			distribution[index] = (distribution[index] / ratings.length) * 100;
+		}
+
+		return distribution;
     };
 };
 
 
 $(function ()
 {
-	$.ajax(
+	setTimeout(function ()
 	{
-		url: "resources/reviews.json",
-
-		success: function (data)
+		$.ajax(
 		{
-			window.ratings = new Ratings(data.reviews);
-		},
+			url: "resources/reviews-alt.json",
 
-		error: function ()
-		{
-			console.log("error", arguments);
-		},
-	})
+			success: function (data)
+			{
+				var ratingsHelper = new RatingsHelper(data.reviews);
+				var scopeTrustpilot = $(".scope-trustpilot");
+
+
+				(function ()
+				{
+					var header = scopeTrustpilot.find("header");
+
+					header.find("h1").html(ratingsHelper.getAverageRatingFormatted());
+					header.find(".ratings").addClass("rating-" + ratingsHelper.getAverageRatingCeiled());
+					header.find("h2").addClass("rating-" + ratingsHelper.getAverageRatingCeiled());
+					header.find("h2 a span").html(ratingsHelper.getRatings().length);
+				}());
+
+
+				(function ()
+				{
+					var barChart = scopeTrustpilot.find("section .bar-chart");
+					var barChartHtml = [];
+
+					var starDistributionPercentages = ratingsHelper.getStarDistributionPercentages();
+					var index = starDistributionPercentages.length;
+
+					while(index)
+					{
+						index--;
+
+						barChartHtml.push("<figure><figure style='width:" + starDistributionPercentages[index] + "%'></figure></figure>")
+					}
+
+					barChart.html(barChartHtml.join(""));
+				}());
+
+				scopeTrustpilot.removeClass("data-working data-error").addClass("data-loaded");
+			},
+
+			error: function ()
+			{
+				$(".scope-trustpilot").removeClass("data-working data-loaded").addClass("data-error");
+			},
+		});
+	}, 1000);
 });

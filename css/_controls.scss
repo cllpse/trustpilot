@@ -200,7 +200,7 @@ $ratings-star-color: #fff;
 
 	        }
 
-	        figure:last-child
+	        figure + figure
 	        {
 	            content: "";
 	            position: absolute;
@@ -311,6 +311,42 @@ $ratings-star-color: #fff;
 	        }
 	    }
 	}
+
+	div.bar-chart
+    {
+        figure
+        {
+            margin: 0;
+            border-radius: 5px;
+            box-shadow: inset rgba(0, 0, 0, 0.15) 0 1px 1px;
+        }
+
+        &.bar-chart-size-default figure
+        {
+        	width: 200px;
+        	height: 20px;
+
+        	& + figure
+            {
+                margin-top: 15px;
+            }
+        }
+
+        > figure
+        {
+            background-color: rgba(0, 0, 0, 0.075);
+
+            figure
+            {
+                position: relative;
+                display: absolute;
+
+                background-color: rgba(0, 0, 0, 0.3);
+
+                @include border-right-radius(0);
+            }
+        }
+    }
 }
 
 
